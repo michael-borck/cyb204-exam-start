@@ -2,11 +2,12 @@ services:
   attacker:
     image: michaelborck/cyb204-attacker:latest
     container_name: kali-attacker
-    stdin_open: true 
-    tty: true        
+    stdin_open: true
+    tty: true
     networks:
       exam-network:
         ipv4_address: 172.20.0.10
+
   target:
     image: michaelborck/cyb204-target-server:latest
     container_name: target-server
@@ -14,6 +15,27 @@ services:
     networks:
       exam-network:
         ipv4_address: 172.20.0.100
+
+  # Decoy Server 1 (Alpine - no vulnerabilities, tests reconnaissance skills)
+  decoy1:
+    image: alpine:latest
+    container_name: decoy-server-1
+    hostname: decoy-1
+    command: sh -c "echo 'Server is running' && sleep infinity"
+    networks:
+      exam-network:
+        ipv4_address: 172.20.0.50
+
+  # Decoy Server 2 (Alpine - no vulnerabilities, tests reconnaissance skills)
+  decoy2:
+    image: alpine:latest
+    container_name: decoy-server-2
+    hostname: decoy-2
+    command: sh -c "echo 'Server is running' && sleep infinity"
+    networks:
+      exam-network:
+        ipv4_address: 172.20.0.51
+
 networks:
   exam-network:
     driver: bridge
