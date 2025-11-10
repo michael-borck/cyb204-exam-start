@@ -53,4 +53,3 @@ When you are finished with the exam, you can stop and remove the containers by r
 docker-compose down
 ```
 
-```
