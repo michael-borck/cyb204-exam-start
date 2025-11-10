@@ -14,7 +14,7 @@ Follow these steps exactly to begin your exam.
 Open your terminal and clone this repository to your computer:
 
 ```bash
-git clone [https://github.com/michaelborck-security/cyb204-exam-start.git](https://github.com/michaelborck-security/cyb204-exam-start.git
+git clone https://github.com/michaelborck-security/cyb204-exam-start.git
 ````
 
 **2. Change Directory**
